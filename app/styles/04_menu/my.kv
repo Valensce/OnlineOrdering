@@ -1,0 +1,105 @@
+<MyGrid>
+    home: welcomePage
+    orders: orderList
+    meal: orderItem
+    help: support
+    GridLayout:
+        cols: 1
+        size: root.width - 100, root.height - 100
+        pos: 50,50
+        GridLayout:
+            Label:
+                text: "Menu"
+                pos: 350, root.height - 100
+                cols: 1
+        GridLayout:
+            background_color: 0,0,0,0
+            canvas.before:
+                Color: 
+                    rgba: self.background_color
+                Rectangle: 
+                    size: root.width /2, root.height /2
+                    pos: root.width/2,root.height/2
+            cols: 4
+            Button:
+                text: "Add"
+                id: orderItem
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None
+            Button:
+                text: "Add"
+                id: orderItem
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None
+            Button:
+                text: "Add"
+                id: orderItem
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None
+            Button:
+                text: "Add"
+                id: orderItem
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None
+            Button:
+                text: "Add"
+                id: orderItem
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None
+            Button:
+                text: "Add"
+                id: orderItem
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None
+            Button:
+                text: "Add"
+                id: orderItem
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None
+            Button:
+                text: "Add"
+                id: orderItem
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None  
+        GridLayout:
+            Label:
+                text: "\n\n"
+                pos: 350, root.height - 100
+                cols: 1
+        GridLayout:
+            background_color: 0,0,0,0
+            size: 100,50
+            pos: 50,250
+            cols: 3
+            Button:
+                text: "Home"
+                id: welcomePage
+                multiline: False
+                on_press: root.pressed()
+                size: 50,50
+                pos: 50,250
+                size_hint: 1, None
+            Button:
+                text: "Help"
+                id: support
+                multiline: False
+                on_press: root.pressed()
+                size: 50,50
+                pos: 50,250
+                size_hint: 1, None              
+            Button:
+                text: "View order list"
+                id: orderList
+                multiline: False
+                on_press: root.pressed()
+                size: 50,50
+                pos: 50,250          
+                size_hint: 1,None

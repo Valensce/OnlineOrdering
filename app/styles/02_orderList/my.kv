@@ -1,0 +1,134 @@
+<MyGrid>
+    orders: orderList
+    menu: customerMenu
+    update: updateOrder
+    remove: removeOrder
+    GridLayout:
+        cols: 1
+        size: root.width - 100, root.height - 100
+        pos: 50,50
+        GridLayout:
+            Label:
+                text: "Your orders"
+                id: orderList
+                pos: 50, 475
+                font_size: 15
+                background_color: 0,0.5,1,0.5
+                cols: 1 
+        GridLayout:
+            Label:
+                text: "Food 1"
+                pos: 50,400
+                background_color: 0,0.5,1,0.5
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: 100,75
+                        pos: 50, 415
+                cols: 1
+            Label:
+                text: "Food 2"
+                pos: 50,300
+                background_color: 0,0.5,1,0.5
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: 100,75
+                        pos: 50, 315
+                cols: 1  
+            Label:
+                text: "Food 3"
+                pos: 50,200
+                background_color: 0,0.5,1,0.5
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: 100,75
+                        pos: 50, 215
+                cols: 1  
+            Label:
+                text: "Food 4"
+                pos: 50,100
+                background_color: 0,0.5,1,0.5
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: 100,75
+                        pos: 50, 115
+                cols: 1           
+        GridLayout:
+            Label:
+                text: "Food description"
+                pos: 215,400
+                background_color: 0,0,0,0
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: 400,75
+                        pos: 200, 415
+                cols: 1
+            Label:
+                text: "Food description"
+                pos: 215,300
+                background_color: 0,0,0,0
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: 400,75
+                        pos: 200, 315
+                cols: 1  
+            Label:
+                text: "Food description"
+                pos: 215,200
+                background_color: 0,0,0,0
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: 400,75
+                        pos: 200, 215
+                cols: 1  
+            Label:
+                text: "Food description"
+                pos: 215,100
+                background_color: 0,0,0,0
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: 400,75
+                        pos: 200, 115
+                cols: 1           
+        GridLayout:
+            background_color: 0,0.5,1,0.5
+            size: 100,45
+            size_hint: None, None
+            cols: 3
+            pos: 50,200
+            Button:
+                text: "Menu"
+                id: customerMenu
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None   
+                pos: 50,200       
+            Button:
+                text: "Update order"
+                id: updateOrder
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None
+                pos: 50,200
+            Button:
+                text: "Remove order"
+                id: removeOrder
+                multiline: False
+                on_press: root.pressed()
+                size_hint: None, None
+                pos: 50,200          

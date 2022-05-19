@@ -1,0 +1,69 @@
+<MyGrid>
+    menu: customerMenu
+    orders: orderList
+    GridLayout:
+        cols: 1
+        size: root.width - 100, root.height - 100
+        pos: 50,50
+        GridLayout:
+            Label:
+                text: "Image"
+                pos: 50, 400
+                background_color: 0,0.5,1,0.5
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: root.width - 100, root.height - 50
+                        pos: 50, 400
+                cols: 1
+        GridLayout:
+            Label:
+                text: "Welcome to our restaurant!"
+                pos: 100, 325
+                cols: 1
+        GridLayout:
+            background_color: 0,0.5,1,0.5
+            size: 100,50
+            pos: 50,200
+            cols: 1
+            Button:
+                text: "Menu"
+                id: customerMenu
+                multiline: False
+                on_press: root.pressed()
+                size: 150,60
+                pos: 50,200
+                size_hint: None, None
+            Button:
+                text: "Order List"
+                id: orderList
+                multiline: False
+                on_press: root.pressed()
+                size: 150,60
+                pos: 50,200
+                size_hint: None, None
+        GridLayout:
+            Label:
+                text: "Image"
+                pos: 250, 150
+                background_color: 0,0.5,1,0.5
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: root.width /3, root.height /3
+                        pos: 250,150
+                cols: 1
+        GridLayout:
+            Label:
+                text: "Help"
+                pos: 550, 175
+                background_color: 0,0.5,1,0.5
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: root.width /4, root.height /4
+                        pos: 550,175
+                cols: 1

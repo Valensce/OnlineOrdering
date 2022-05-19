@@ -1,0 +1,51 @@
+<MyGrid>
+    take: takeAway
+    dine: dineIn
+    orders: orderList
+    GridLayout:
+        cols: 1
+        size: root.width - 100, root.height - 100
+        pos: 50,50
+        GridLayout:
+            Label:
+                text: "Image"
+                pos: 400,300
+                background_color: 0,0.5,1,0.5
+                canvas.before:
+                    Color: 
+                        rgba: self.background_color
+                    Rectangle: 
+                        size: 300,200
+                        pos: 400, 300
+                cols: 1
+        GridLayout:
+            Label:
+                text: "Success!\n\nYour order has been updated!\n\nSelect one of the following options:"
+                pos: 150, 375
+                cols: 1
+        GridLayout:
+            background_color: 0,0.5,1,0.5
+            size: 100,50
+            pos: 50,250
+            cols: 3
+            Button:
+                text: "Take away"
+                id: takeAway
+                multiline: False
+                on_press: root.pressed()
+                size: 100,50
+                pos: 50,250
+            Button:
+                text: "Dine in"
+                id: dineIn
+                multiline: False
+                on_press: root.pressed()
+                size: 100,50
+                pos: 50,250
+            Button:
+                text: "Order list"
+                id: orderList
+                multiline: False
+                on_press: root.pressed()
+                size: 100,50
+                pos: 50,250
