@@ -1,35 +1,66 @@
+import json, os, sys
 from cmath import nan
 from tkinter import Y
 
+with open(os.path.join(sys.path[0], "customerMenu.json")) as file:
+	customerMenu = json.loads(file.read())
+	file.close()
+
+ordered = False
+
+def cancel():
+
+	input("\n\nOrder cancelled!\n\nPress Enter to finish.")
+	sys.exit()
+
 def orderList():
-    totalOrder=[]
-    customerMenu = [
-        {"type":"dessert","name":"cake","price":int(7)},
-        {"type":"drink","name":"smoothie","price":int(8)},
-        {"type":"dessert","name":"icecream","price":int(5)},
-        {"type":"salad","name":"caeser","price":int(12)},
-        {"type":"drink","name":"lemonade","price":int(5)},
-        {"type":"burger","name":"beef","price":int(15)},
-        {"type":"dessert","name":"fudge","price":int(5)}
-    ]
-    selection1=str(input("Enter meal type:"))
-    if selection1=="cancel":
-        orderList()
-    print([row['name'] for row in customerMenu if row['type']==selection1])
-    selection2=str(input("Select a meal:"))
-    if selection2=="cancel":
-        orderList()
-    for row in customerMenu:
-        if selection2==row["name"] and selection1==row["type"]:
-            print(f"Order found || Type: {row['type']} || Name: {row['name']} || Price: {row['price']}")
-            orderItem=row
-    confirmation=str(input("Confirm order: [y/n] "))
-    if confirmation=="y":
-            print("Order successful!")
-            totalOrder.append(orderItem)
-            for item in totalOrder:
-                print(item)
-    if confirmation=="n":
-            print("Order discarded.")
-            orderList()
-orderList()
+
+	selection1_valid = False
+	while not selection1_valid:
+		selection1 = input("\nEnter item type:\n\n>")
+		if selection1 == "cancel":
+			cancel()
+		mealsInType = []
+		for row in customerMenu:
+			if selection1 == row["type"]:
+				mealsInType.append(row["name"])
+				selection1_valid = True
+
+	print(f"\nFound: {mealsInType}\n")
+
+	selection2_valid = False
+	while not selection2_valid:
+		selection2 = input("\nSelect an item:\n\n>")
+		if selection2 == "cancel":
+			cancel()
+		for row in customerMenu:
+			if selection2 == row["name"] and selection1 == row["type"]:
+				selection2_valid = True
+				order = {
+					"type": row["type"],
+					"name": row["name"]
+				}
+				break
+
+	print(f"\n\nOrder found: {order}\n")
+
+	confirmation = " "
+	while confirmation[0] not in ["y", "n"]:
+		confirmation = input("\nConfirm order? [y/n]\n\n>") + " "
+		if confirmation == "cancel":
+			cancel()
+	if confirmation.lower().startswith("y"):
+		global ordered
+		ordered = True
+		global totalOrder
+		totalOrder = order
+		input(f"\n\nOrder success! {totalOrder}\n\nPress Enter to finish.")
+	if confirmation.lower().startswith("n"):
+		print("\n\nOrder discarded.\n")
+
+print("\nType \"cancel\" to cancel at any time.")
+
+while ordered == False:
+	orderList()
+
+# Result is `totalOrder`
