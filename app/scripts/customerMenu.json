@@ -1,0 +1,30 @@
+[
+	{
+		"type": "dessert",
+		"name": "cake"
+	},
+	{
+		"type": "drink",
+		"name": "smoothie"
+	},
+	{
+		"type": "dessert",
+		"name": "icecream"
+	},
+	{
+		"type": "salad",
+		"name": "caeser"
+	},
+	{
+		"type": "drink",
+		"name": "lemonade"
+	},
+	{
+		"type": "burger",
+		"name": "beef"
+	},
+	{
+		"type": "dessert",
+		"name": "fudge"
+	}
+]
