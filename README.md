@@ -1,3 +1,3 @@
-<h1 align="center"><code>Digital Solutions Year 11 || Formative Assessment 1</code></h1>
+<h1 align="center">Digital Solutions Year 11 || Formative Assessment 1</h1>
 
-By Isabel Lifu
+<code>By Isabel Lifu</code>
