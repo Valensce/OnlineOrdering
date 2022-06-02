@@ -30,7 +30,7 @@ def orderList():
 
 	selection2_valid = False
 	while not selection2_valid:
-		selection2 = input("\nSelect an item:\n\n>")
+		selection2 = input("\nSelect an item:\n\n")
 		if selection2 == "cancel":
 			cancel()
 		for row in customerMenu:
