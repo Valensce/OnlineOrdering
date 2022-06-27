@@ -16,11 +16,11 @@ class MyGrid(GridLayout):
     update = ObjectProperty(None)
     remove = ObjectProperty(None)
 
-    def pressed(this):
-        ordertext = this.orders.text
-        menutext = this.menu.text
-        updatetext = this.update.text 
-        removetext = this.remove.text
+    def pressed(self):
+        ordertext = self.orders.text
+        menutext = self.menu.text
+        updatetext = self.update.text
+        removetext = self.remove.text
         print(ordertext)
         print(menutext)
         print(updatetext)
