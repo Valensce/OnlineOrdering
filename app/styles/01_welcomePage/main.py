@@ -14,9 +14,9 @@ class MyGrid(GridLayout):
     menu = ObjectProperty(None)
     orders = ObjectProperty(None)
 
-    def pressed(this):
-        usertext = this.menu.text
-        orderstext = this.orders.text 
+    def pressed(self):
+        usertext = self.menu.text
+        orderstext = self.orders.text
         print(menutext)
         print(orderstext)
         

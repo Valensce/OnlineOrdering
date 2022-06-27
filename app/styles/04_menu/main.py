@@ -16,11 +16,11 @@ class MyGrid(GridLayout):
     meal = ObjectProperty(None)
     help = ObjectProperty(None)
 
-    def pressed(this):
-        hometext = this.home.text
-        orderstext = this.orders.text
-        mealtext = this.meal.text
-        helptext = this.help.text
+    def pressed(self):
+        hometext = self.home.text
+        orderstext = self.orders.text
+        mealtext = self.meal.text
+        helptext = self.help.text
 
         print(hometext)
         print(orderstext)

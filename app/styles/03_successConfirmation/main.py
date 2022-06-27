@@ -15,10 +15,10 @@ class MyGrid(GridLayout):
     dine = ObjectProperty(None)
     orders = ObjectProperty(None)
 
-    def pressed(this):
-        taketext = this.take.text
-        dinetext = this.dine.text
-        orderstext = this.orders.text
+    def pressed(self):
+        taketext = self.take.text
+        dinetext = self.dine.text
+        orderstext = self.orders.text
 
         print(taketext)
         print(dinetext)
